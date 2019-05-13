@@ -1,0 +1,46 @@
+{
+  "name": "storybook-twig",
+  "version": "1.0.0",
+  "description": "Storybook for Twig: View TWIG templates in isolation with Hot Reloading.",
+  "keywords": [
+    "storybook",
+    "twig"
+  ],
+  "homepage": "https://github.com/markhuot/storybook-twig",
+  "bugs": {
+    "url": "https://github.com/markhuot/storybook-twig/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/markhuot/storybook-twig.git"
+  },
+  "license": "MIT",
+  "main": "dist/client/index.js",
+  "bin": {
+    "build-storybook": "./bin/build.js",
+    "start-storybook": "./bin/index.js",
+    "storybook-server": "./bin/index.js"
+  },
+  "scripts": {
+    "compile": "babel ./src --out-dir=./dist --copy-files --config=.babelrc"
+  },
+  "dependencies": {
+    "@storybook/core": "5.1.0-alpha.36",
+    "common-tags": "^1.8.0",
+    "core-js": "^2.6.5",
+    "global": "^4.3.2",
+    "regenerator-runtime": "^0.12.1",
+    "twig": "^1.13.2",
+    "twig-loader": "^0.4.1"
+  },
+  "peerDependencies": {
+    "babel-loader": "^7.0.0 || ^8.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4"
+  }
+}
