@@ -1,4 +1,4 @@
-# Storybook for HTML
+# Storybook for Twig
 
 ---
 
@@ -12,9 +12,29 @@ So you can develop UI components in isolation without worrying about app specifi
 
 ## Getting Started
 
-```sh
-cd my-app
-npx -p @storybook/cli sb init -t html
+Your `.storybook/config.js` should look something like this,
+
+```js
+import { configure } from 'storybook-twig';
+configure(() => {
+    // ... load stories
+}, module);
+```
+
+Then each story should then return the rendered HTML of your twig template. You are free to use any of the add-ons that the native HTML stories support.
+
+```js
+import { storiesOf } from 'storybook-twig'
+import { withKnobs, text, boolean, number } from '@storybook/addon-knobs'
+import template from './test.twig'
+
+const stories = storiesOf('Twig', module)
+stories.addDecorator(withKnobs)
+stories.add('with knobs', () => {
+    return template({
+        test: text('test', 'foo bar'),
+    })
+})
 ```
 
 For more information visit: [storybook.js.org](https://storybook.js.org)
