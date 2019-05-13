@@ -1,6 +1,6 @@
 {
   "name": "storybook-twig",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Storybook for Twig: View TWIG templates in isolation with Hot Reloading.",
   "keywords": [
     "storybook",
