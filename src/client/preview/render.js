@@ -18,22 +18,7 @@ export default function renderMain({
   const element = storyFn();
 
   showMain();
-  if (typeof element === 'string') {
-    rootElement.innerHTML = element;
-  } else if (element instanceof Node) {
-    if (html.preventForcedRender === true && forceRender === true) {
-      return;
-    }
 
-    rootElement.innerHTML = '';
-    rootElement.appendChild(element);
-  } else {
-    showError({
-      title: `Expecting an HTML snippet or DOM node from the story: "${selectedStory}" of "${selectedKind}".`,
-      description: stripIndents`
-        Did you forget to return the HTML snippet from the story?
-        Use "() => <your snippet or node>" or when defining the story.
-      `,
-    });
-  }
+  const [template, vars] = element
+  return template(vars)
 }

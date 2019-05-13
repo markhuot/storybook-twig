@@ -9,6 +9,10 @@ export {
   raw,
 } from './preview';
 
+export function withSource () {
+
+}
+
 if (module && module.hot && module.hot.decline) {
   module.hot.decline();
 }
